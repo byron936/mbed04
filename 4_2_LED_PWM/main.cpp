@@ -5,22 +5,22 @@ PwmOut PWM1(D6);
 
 AnalogIn Ain(A0);
 
-float ADCdata;
+int main()
 
-int main(){
+{
 
-  while(1){
+   while (1)
 
-    PWM1.period_ms(500);
+   {
 
-    PWM1 = Ain;
+      PWM1.period_ms(5);
 
-    ADCdata = Ain; //send an opening text message
+      PWM1 = Ain;
 
-    printf("%f\r\n", ADCdata);
+      printf("%f\n\r", PWM1.read());
 
-    ThisThread::sleep_for(100ms);
+      ThisThread::sleep_for(50ms);
 
-  }
+   }
 
 }
